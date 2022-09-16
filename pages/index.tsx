@@ -2,8 +2,19 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { Button } from '../components/Button'
+import { useState } from 'react'
 
 const Home: NextPage = () => {
+
+
+  const [idea,setIdea] = useState('idea')
+  // This function is called when the input changes
+  const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIdea(event.target.value);
+    console.log(event.target.value);
+  };
+
   return (
     <div className={styles.home}>
       <Head>
@@ -13,8 +24,9 @@ const Home: NextPage = () => {
       </Head>
 
       <h1 className={styles.h1}>I have an idea!</h1>
-      <textarea className={styles.textarea}></textarea>
-      <button className={styles.button}>Submit</button>
+      <textarea onChange={() => inputHandler} className={styles.textarea}></textarea>
+        <Button handleClick={() => console.log(idea)} ></Button>
+          
     </div>
   )
 }

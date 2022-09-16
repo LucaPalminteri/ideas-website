@@ -8,7 +8,7 @@
 
 .h1 {
     font-size: 50px;
-    color: #AABAF2;
+    color: #8AAAE2;
 }
 
 .textarea {
@@ -28,5 +28,12 @@
     font-size: 30px;
     padding: 10px 20px;
     border-radius: 80px;
-    color: #AABAF2;
+    color: #8AAAE2;
+    transition-duration: .2s;
+}
+
+.button:hover {
+    background-color: #90ee90;
+    color: #FFF;
+    cursor: pointer;
 }
